@@ -8,16 +8,13 @@
       body: {
  "condition": "!('any' in topics)",
  "data" : {
-     "body" : "This human feeds me, i should be a god ooooh feather moving feather! but poop on floor and watch human clean up but crash against wall but walk away like nothing happened funny little cat chirrup noise shaking upright tail when standing next to you dismember a mouse and then regurgitate parts of it on the family room floor. Munch on tasty moths.",
-     "title": "Cat Ipsum",
-     "key_1" : "Extra key-value (not currently supported)",
-     "key_2" : "Extra key-value (not currently supported)"
-
+     "body" : document.getElementById('message').value,
+     "title": document.getElementById('title').value
  }
 },
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'key=' + $("#apikey").value()
+        'Authorization': 'key=' + document.getElementById('apikey').value
       }
     });
    }
@@ -31,6 +28,8 @@
 
  <form onsubmit="return sendNotification();">
    <label>API klic <input type="text" id="apikey"></label> 
+   <br>
+   <label>Titulek notifikace <input type="text" id="title" value="Mohlo by Vás zajímat..."></label>     
    <br>
    <label>Notifikace <input type="text" id="message"></label> 
    <br>
