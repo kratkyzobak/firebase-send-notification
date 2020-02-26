@@ -3,7 +3,7 @@
 <script>
    function sendNotification() {
    const userAction = async () => {
-    const response = await fetch('http://example.com/movies.json', {
+    const response = await fetch('https://fcm.googleapis.com/fcm/send', {
       method: 'POST',
       body: {
  "condition": "!('any' in topics)",
